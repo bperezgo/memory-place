@@ -1,0 +1,18 @@
+/* this is an abbreviated version of @font-face, meant to show how to reference the font in the relative url attribute.
+/* assuming the fonts were stored in public/fonts */
+
+@font-face {
+  font-family: 'Lobster Two';
+  src: local('Lobster Two'),
+    url(/fonts/Lobster_Two/LobsterTwo-Italic.ttf) format('truetype');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lobster Two';
+}
