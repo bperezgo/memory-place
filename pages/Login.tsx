@@ -1,12 +1,14 @@
 import { Profile } from '@components/Profile'
 import { InputSecretPassword } from '@components/InputSecretPassword'
-import styles from './index.module.scss'
+import styles from './login.module.scss'
 
 export default function Login() {
   return (
     <div className={styles.LoginContainer}>
-      <Profile />
-      <InputSecretPassword />
+      <div className={styles.Login__box}>
+        <Profile />
+        <InputSecretPassword />
+      </div>
     </div>
   )
 }

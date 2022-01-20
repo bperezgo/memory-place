@@ -1,5 +1,12 @@
 @import '../variables.module.scss';
 
+.ProfileContainer {
+  height: 190px;
+  width: 190px;
+  z-index: 1;
+  margin: auto;
+}
+
 .external__circle {
   display: flex;
   justify-content: center;
