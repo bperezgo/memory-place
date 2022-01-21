@@ -1,15 +1,27 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Profile } from '@components/Profile'
 import { InputSecretPassword } from '@components/InputSecretPassword'
+import { getProfileImg } from '@api/profile'
 import styles from './login.module.scss'
 
-const exampleImg =
-  'https://lh3.googleusercontent.com/HThMSkbSg2ntSQZdcFsOtflgkL6vBJPm6bJFeat2c64WkMjvLeHjEvux2U8fFOHydrNz--kcAVv4AQMlD4Z9sR60ZA=w640-h400-e365-rj-sc0x00ffffff'
+export const getStaticProps: GetStaticProps<{
+  profileImg: string
+}> = async () => {
+  const profileImg = await getProfileImg()
+  return {
+    props: {
+      profileImg,
+    },
+  }
+}
 
-export default function Login() {
+export default function Login({
+  profileImg,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="CenteredContainer">
       <div className={styles.Login__box}>
-        <Profile img={exampleImg} />
+        <Profile img={profileImg} />
         <InputSecretPassword />
       </div>
     </div>

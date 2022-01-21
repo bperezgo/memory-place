@@ -13,8 +13,9 @@ export const Portrait = ({ img }: PortraitProps) => {
       </div>
       <div
         className={styles.InternalPortrait}
-        style={{ background: `url('${img}') no-repeat center` }}
-      ></div>
+      >
+          <img src={img} alt="" />
+      </div>
       <div className={`${styles.NextButton} ${styles.PortraitButton}`}>
         <BiCaretRight />
       </div>

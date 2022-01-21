@@ -1,15 +1,28 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Portrait } from '@components/Portrait'
+import { IMemory } from '@interfaces/memories'
+import { getMemories } from '@api/memories'
 
-const imgs = [
-  'https://r1.abcimg.es/resizer/resizer.php?imagen=https%3A%2F%2Fstatic1.abc.es%2Fmedia%2Fpeliculas%2F000%2F019%2F042%2Fcars-2.jpg&nuevoancho=620&medio=abc',
-  'https://i.ytimg.com/vi/_hP0vvGJKN4/maxresdefault.jpg',
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMyQz1eHBUXaap0X0wCL1lVlfX7Pwhqy7_2w&usqp=CAU',
-]
+type MemoriesProps = {
+  memories: IMemory[]
+}
 
-export default function Portraits() {
+export const getStaticProps: GetStaticProps<MemoriesProps> = async () => {
+  const memories = await getMemories()
+
+  return {
+    props: { memories },
+  }
+}
+
+export default function Portraits({
+  memories,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const totalImgs = memories.length
+  // TODO: If memories comes empty, create another logic
   return (
     <div className="CenteredContainer CenteredVerticalAlign">
-      <Portrait img={imgs[1]} />
+      <Portrait img={memories[0].img} />
     </div>
   )
 }
