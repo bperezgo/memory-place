@@ -5,7 +5,7 @@ export default function Home() {
   const router = useRouter()
   useEffect(() => {
     setTimeout(() => {
-      router.push('/portraits')
+      router.push('/Portraits')
     }, 3000)
   }, [])
   return (

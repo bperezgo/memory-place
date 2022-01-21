@@ -10,7 +10,7 @@ export const InputSecretPassword = ({}: InputSecretPasswordProps) => {
   const onPressEnter = (event: any) => {
     const password = inputRef.current?.value
     if (event.key === 'Enter' && password === 'beyourselfforever') {
-      router.push('/home')
+      router.push('/Home')
     }
   }
   return (
