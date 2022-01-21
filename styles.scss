@@ -1,3 +1,5 @@
+@import './variables.module.scss';
+
 /* this is an abbreviated version of @font-face, meant to show how to reference the font in the relative url attribute.
 /* assuming the fonts were stored in public/fonts */
 
@@ -31,3 +33,17 @@ body {
 .CenteredVerticalAlign {
   align-items: center;
 }
+
+.Title {
+  color: $primary-color;
+  font-size: 4em;
+  margin: 0 22px;
+}
+
+.Login__box {
+  position: relative;
+  margin: 180px auto;
+  width: 260px;
+  height: 140px;
+}
+

@@ -2,7 +2,6 @@ import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Profile } from '@components/Profile'
 import { InputSecretPassword } from '@components/InputSecretPassword'
 import { getProfileImg } from '@api/profile'
-import styles from './login.module.scss'
 
 export const getStaticProps: GetStaticProps<{
   profileImg: string
@@ -20,7 +19,7 @@ export default function Login({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="CenteredContainer">
-      <div className={styles.Login__box}>
+      <div className="Login__box">
         <Profile img={profileImg} />
         <InputSecretPassword />
       </div>
