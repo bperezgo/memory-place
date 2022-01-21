@@ -7,7 +7,7 @@ const exampleImg =
 
 export default function Login() {
   return (
-    <div className={styles.LoginContainer}>
+    <div className="CenteredContainer">
       <div className={styles.Login__box}>
         <Profile img={exampleImg} />
         <InputSecretPassword />

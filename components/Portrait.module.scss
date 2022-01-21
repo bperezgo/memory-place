@@ -1,0 +1,39 @@
+@import '../variables.module.scss';
+
+.ExternalPortrait {
+  position: relative;
+  border: solid;
+  height: calc(100vh - 3em);
+  width: calc(100vw - 3em);
+  background-color: $dark-color;
+  border: none;
+  border-radius: 5px;
+}
+
+.InternalPortrait {
+  position: absolute;
+  border-radius: 5px;
+  height: calc(100% - 22px);
+  width: calc(100% - 16px);
+  margin: 11px 8px;
+  background-color: $secondary-color;
+}
+
+.PortraitButton {
+  color: $secondary-color;
+  font-size: 60px;
+}
+
+.PrevButton {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 0.5em;
+  z-index: 3;
+}
+
+.NextButton {
+  position: absolute;
+  top: calc(50% - 20px);
+  right: 0.5em;
+  z-index: 3;
+}
