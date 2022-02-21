@@ -12,5 +12,8 @@ export default async function getMemories(): Promise<IMemory[]> {
     region,
     credentials: { accessKeyId, secretAccessKey },
   })
+  const defaultImg =
+    'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0a/41/44/ea.jpg'
+  return [{ id: '', img: defaultImg }]
   return memoriesRepository.getMemories()
 }

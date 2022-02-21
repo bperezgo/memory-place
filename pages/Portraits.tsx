@@ -1,24 +1,22 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next'
+import { useState } from 'react'
 import { Portrait } from '@components/Portrait'
 import { IMemory } from '@interfaces/memories'
-import { getMemories } from '@api/memories'
-import { useState } from 'react'
+import getMemories from '@api/memories'
 
-type MemoriesProps = {
+type PortraitProps = {
   memories: IMemory[]
 }
 
-export const getStaticProps: GetStaticProps<MemoriesProps> = async () => {
+export async function getServerSideProps(_ctx: any) {
   const memories = await getMemories()
-
   return {
-    props: { memories },
+    props: {
+      memories,
+    },
   }
 }
 
-export default function Portraits({
-  memories,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Portraits({ memories }: PortraitProps) {
   const totalImgs = memories.length
   const [currentMemoryIdx, setCurrentMemoryIdx] = useState(0)
   const onNextImg = () => {
@@ -34,6 +32,7 @@ export default function Portraits({
     setCurrentMemoryIdx(currentMemoryIdx - 1)
   }
   // TODO: If memories comes empty, create another logic
+  if (totalImgs === 0) return <></>
   return (
     <div className="CenteredContainer CenteredVerticalAlign">
       <Portrait

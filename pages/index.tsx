@@ -5,7 +5,7 @@ export default function Home() {
   const router = useRouter()
   useEffect(() => {
     // Always do navigations after the first render
-    router.push('/Login', undefined, { shallow: true })
+    router.push('/login', undefined, { shallow: true })
   }, [])
   return <></>
 }

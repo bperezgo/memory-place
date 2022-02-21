@@ -23,7 +23,8 @@
       "@api/*": ["api/*"],
       "@api": ["api/index.ts"],
       "@components/*": ["components/*"],
-      "@interfaces/*": ["interfaces/*"]
+      "@interfaces/*": ["interfaces/*"],
+      "@data/*": ["data/*"]
     },
     "incremental": true
   },
